@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users data</title>
+    <link rel="stylesheet" href="{% static 'css/view-users.css' %}">
+</head>
+<body>
+    <div class="menu">
+        <!--accessing session variable in html-->
+       <!---- {% if request.session.username == 'admin' %}session variable mai agar admin hai to to use dusra menu dikhana hai aur normal student ko dusra-->
+        <!--Menu for admin-->
+        <ul class="navbar-admin">
+            <li> <a href="http://localhost:8000/OTS/home/">Home</a></li>
+            <li> <a href="http://localhost:8000/OTS/new-question/">New Question</a></li>
+            <li><a href="http://localhost:8000/OTS/view-questions/">View All</a></li>
+             <li><a href="http://localhost:8000/OTS/logout/">Logout</a></li>
+         </ul>
+     <!----   {% else %}
+        menu for learner-->
+       <!--- <a href="http://localhost:8000/OTS/start-test/">Start Test</a>
+        <a href="http://localhost:8000/OTS/logout/">Logout</a>
+        {% endif %}-->
+    </div>
+    <h1 id="header">View Users</h1>
+     <table class="t1">
+         <tr>
+             <th class="links">Username</th>
+             <th class="links">Realname</th>
+             <th class="links">Password</th>
+         </tr>
+         {% for user in users%}<!--It is Jinja ,loop will that number of time ==no of records has been fetched||questions is the  key-->
+         <tr>
+             <td class="links">{{user.username}}</td><!--question represents one-one item in questions(key) -->
+             <td class="links">{{user.realname}}</td>
+             <td class="links">{{user.password}}</td>
+             <td class="links"><a href="http://localhost:8000/OTS/delete-user?username={{user.username}}">Delete</a></td>
+         </tr>
+         {% endfor %}
+     </table>
+</body>
+</html>

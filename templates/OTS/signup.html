@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Sinup</title>
+    <link rel="stylesheet" href="{% static 'css/signup1.css' %}">
+</head>
+<body>
+    <div class="main">Create Account.....</div>
+    <div class="container">
+       <div class="header"><h1>User Registration</h1></div>
+
+       <div class="formcss">
+       <form action="http://localhost:8000/OTS/save-user/" method="post">
+           {%csrf_token%}
+           
+                   <div class="tag">Username <input type="text" name="username" autocomplete="'off"></div>
+                    <div class="tag" id="password">Password   <input type="password" name="password"></div>
+                    <div class="tag">Real Name <input type="text" name="realname"></div>
+                   <div class="btn"></div><input type="submit" value="signup"></div>
+       </form> 
+       </div>
+       <div class="error"> <h2><p>{{errmsg}}</p></h2></div>  
+    </div> 
+          
+</body>
+</html>

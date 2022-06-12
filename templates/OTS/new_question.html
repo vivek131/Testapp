@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Question</title>
+    <link rel="stylesheet" href="{% static 'css/new-question.css' %}">
+</head>
+<body>
+    <div class="menu">
+        <!--accessing session variable in html-->
+       <!---- {% if request.session.username == 'admin' %}<!--session variable mai agar admin hai to to use dusra menu dikhana hai aur normal student ko dusra-->
+        <!--Menu for admin-->
+        <ul class="navbar-admin">
+            <li> <a href="http://localhost:8000/OTS/home/">Home</a></li>
+            <li><a href="http://localhost:8000/OTS/view-questions/">View All</a></li>
+             <li><a href="http://localhost:8000/OTS/logout/">Logout</a></li>
+         </ul>
+     <!----   {% else %}
+        menu for learner-->
+       <!--- <a href="http://localhost:8000/OTS/start-test/">Start Test</a>
+        <a href="http://localhost:8000/OTS/logout/">Logout</a>
+        {% endif %}-->
+    </div>
+    <div class="container">
+    <h1 id="header">New Question</h1>
+    <div class="formcss">
+    <form action="http://localhost:8000/OTS/save-question/" method="post">
+        {% csrf_token %} <!--It verify that data is sent from our from -->
+        <!--template tag-->
+        <div class="title">
+            Question Statement
+        </div>
+        <div class="data"><textarea name="question"></textarea></div>
+
+        <div class="title">Option a</div>
+        <div class="data"><input type="text" name="optiona"></div>
+
+        
+        <div class="title">Option b</div>
+        <div class="data"><input type="text" name="optionb"></div>
+
+        
+        <div class="title">Option c</div>
+        <div class="data"><input type="text" name="optionc"></div>
+
+        
+        <div class="title">Option d</div>
+        <div class="data"><input type="text" name="optiond"></div>
+
+        <div class="title">Answer</div>
+        <div class="data">
+            <select name="answer">
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+                <option value="d">d</option>
+            </select>
+        </div>
+
+        <div id="btn"><input type="submit" value="Save"></div>
+    </form>
+    </div>
+</div>
+</body>
+</html>

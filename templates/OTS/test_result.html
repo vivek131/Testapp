@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="{% static 'css/test-result1.css' %}">
+</head>
+<body>
+    <div class="menu">
+        <!--accessing session variable in html-->
+        {% if request.session.username == 'admin' %}<!--session variable mai agar admin hai to to use dusra menu dikhana hai aur normal student ko dusra-->
+        <!--Menu for admin-->
+        <ul class="navbar-admin">
+            <li> <a href="http://localhost:8000/OTS/new-question/">New</a></li>
+            <li><a href="http://localhost:8000/OTS/view-questions/">View All</a></li>
+             <li><a href="http://localhost:8000/OTS/logout/">Logout</a></li>
+         </ul>
+        {% else %}
+      <!----  -menu for learner-->
+        <ul class="navbar-user">
+            <li><a href="http://localhost:8000/OTS/start-test/">Re-attempt Test</a></li>
+            <li><a href="http://localhost:8000/OTS/logout/">Logout</a></li>
+        </ul>
+        {% endif %}
+    </div>
+    <div class="container">
+    <h1 id="header">Result</h1>
+    <div class="subcontainer">
+    <table>
+        <tr id="attempt">
+        <th>Total Attempt = </th>
+        <td >{{total_attempt}}</td>
+        </tr>
+        <tr id="right">
+            <th>Total_Right = </th>
+            <td >{{total_right}}</td>
+        </tr>
+        <tr id="wrong">
+            <th>Total_Wrong = </th>
+            <td >{{total_wrong}}</td>
+        </tr>
+    </table>
+</div>
+    </div>
+</body>
+</html>

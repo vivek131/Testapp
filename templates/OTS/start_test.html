@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Paper</title>
+    <link rel="stylesheet" href="{% static 'css/start-test.css' %}">
+</head>
+<body>
+    <h1 id="header">Online Test Paper</h1>
+    <div class="formcss">
+    <form action="http://localhost:8000/OTS/test-result/" method="post">
+        {% csrf_token %}
+        {% for question in questions %}
+        <div class="question">
+            <input type="hidden" name="qno{{question.qno}}" value="{{question.qno}}" ><!--ise chupakar bhejo--isse konsa question hai vo databse se niklega-->
+            <div class="que">
+                {{question.que}}  <!--For printing question-->
+            </div>
+            <div class="option"><input type="radio" name="q{{question.qno}}" value="a">{{question.optiona}}</div> <!--name for accessing this in result page-->
+            <div class="option"><input type="radio" name="q{{question.qno}}" value="b">{{question.optionb}}</div><!--yha se ek name hi jaaega jisse ki data base se fetch kie hue ans se match kraya jaega-->
+            <div class="option"><input type="radio" name="q{{question.qno}}" value="c">{{question.optionc}}</div>
+            <div class="option"><input type="radio" name="q{{question.qno}}" value="d">{{question.optiond}}</div>
+        </div>
+        {% endfor %}
+        <div id="btn">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+</body>
+</html>

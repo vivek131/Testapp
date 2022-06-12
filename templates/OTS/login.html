@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}<!--template tag to load all static contentmeans tbhi niche vala link kaam krega-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin</title>
+    <link rel="stylesheet" href="{% static 'css/Login.css' %}">
+</head>
+<body>
+    <div class="main">Hey!!!Welcome</div>
+    <div class="container">
+       <div class="header"> <h1>User Login</h1></div>
+    <div class="formcss">
+    <form action="http://localhost:8000/OTS/login-validation/" method="post">
+       {% csrf_token %}
+         <div class="u" ><input type="text" name="username"  placeholder="Enter Username"></td></div>
+           
+                <div class="u" > <input type="password" name="password"  placeholder="Enter Password"></div>
+           
+               <div class="btn1"><input type="submit" value="Sign-in"></div>
+                <div class="btn2" ><a href="http://localhost:8000/OTS/signup">Sign-up</a></div>
+          
+    </form>
+</div>
+</div>
+</body>
+</html>

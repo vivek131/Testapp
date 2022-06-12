@@ -1,0 +1,70 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+.main{
+    font-size: 4.2rem;
+    color:white;
+    margin-top:20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.container{
+    width: 23%;
+    margin: auto;
+    margin-top: 100px;
+    border: 2px solid white;
+    border-radius: 10px;
+    height:250px;
+}
+.header{
+    color: white;
+    text-align: center;
+    font-size: 1.4rem;
+}
+.formcss{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.formcss .u input{
+    padding:2px;
+    width:250px;
+    border:2px solid white;
+    border-radius:10px;
+    font-size: 1.2rem;
+}
+.formcss .u{
+    margin-top: 13px;
+    text-align: center;
+}
+.formcss .btn1 {
+    margin-top: 13px;
+    text-align: center;
+}
+
+.formcss .btn1 input{
+   
+    background-color: white;
+    text-decoration: none;
+    border: 2px solid black;
+    font-size: 1.1rem;
+    padding:3px;
+    border-radius: 10px;
+    width: 90px;
+}
+
+.formcss .btn2 {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.formcss .btn2 a{
+    font-size: 1.1rem;
+    border-radius: 11px;
+    width: 110px;
+    background: white;
+    padding: 3px;
+    text-decoration: none;
+}
