@@ -11,7 +11,7 @@
 <body>
     <h1 id="header">Online Test Paper</h1>
     <div class="formcss">
-    <form action="http://localhost:8000/OTS/test-result/" method="post">
+    <form action="https://testpariksha.herokuapp.com/OTS/test-result/" method="post">
         {% csrf_token %}
         {% for question in questions %}
         <div class="question">

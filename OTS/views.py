@@ -9,9 +9,9 @@ def newQuestion(request):#yha qestion sirh form mai likha jaega
         if request.session['username'] ==  'admin':
             pass
         else:
-            return HttpResponseRedirect("http://localhost:8000/OTS/home/")
+            return HttpResponseRedirect("https://testpariksha.herokuapp.com/OTS/home/")
     except:
-         return HttpResponseRedirect("http://localhost:8000/OTS/login/")
+         return HttpResponseRedirect("https://testpariksha.herokuapp.com/OTS/login/")
 
     res=render(request,'OTS/new_question.html')#template k andar ka OTS hai
     return res
@@ -26,7 +26,7 @@ def saveQuestion(request):#ye question ko database mai insert krdega
     question.optiond=request.POST['optiond']
     question.answer=request.POST['answer']
     question.save()#every model class object has a method called save
-    return HttpResponseRedirect('http://localhost:8000/OTS/view-questions/')
+    return HttpResponseRedirect('https://testpariksha.herokuapp.com/OTS/view-questions/')
      #in views we return something so here we are redirecting the questionframer(user) to the page where he can view all questions after filling one question
 
 def viewQuestions(request):
@@ -34,9 +34,9 @@ def viewQuestions(request):
         if request.session['username'] == 'admin':
             pass
         else:
-            return HttpResponseRedirect("http://localhost:8000/OTS/home/")
+            return HttpResponseRedirect("https://testpariksha.herokuapp.com/OTS/home/")
      except:
-         return HttpResponseRedirect("http://localhost:8000/OTS/login/")
+         return HttpResponseRedirect("https://testpariksha.herokuapp.com/OTS/login/")
      questions=Question.objects.all()#Question is class aur ojects jo hai uske parent class mai hai, to all likhne se vo saare objects ko represent krne lga hai
      #ab hum question ami saare data agya hai jo bhi model yaani database mai hai
      res=render(request,'OTS/view_questions.html',{'questions':questions})#template k andar ka OTS hai
@@ -47,9 +47,9 @@ def viewusers(request):
         if request.session['username']=='admin':
             pass
         else:
-            return HttpResponseRedirect("http://localhost:8000/OTS/home/")
+            return HttpResponseRedirect("https://testpariksha.herokuapp.com/OTS/home/")
     except:
-         return HttpResponseRedirect("http://localhost:8000/OTS/login/")
+         return HttpResponseRedirect("https://testpariksha.herokuapp.com/OTS/login/")
     users=User.objects.all()
     res=render(request,'OTS/view_user.html',{'users':users})
     return res
@@ -59,9 +59,9 @@ def editQuestion(request):
         if request.session['username'] == 'admin':
             pass
         else:
-            return HttpResponseRedirect("http://localhost:8000/OTS/home/")
+            return HttpResponseRedirect("https://testpariksha.herokuapp.com/OTS/home/")
     except:
-         return HttpResponseRedirect("http://localhost:8000/OTS/login/")
+         return HttpResponseRedirect("https://testpariksha.herokuapp.com/OTS/login/")
     q=request.GET['qno']#link se jo bhi data ata hai use GET[] se access krte hai usme key daalkar, aur jo form se ata hai use POST se
     question=Question.objects.get(qno=int(q))
      #Question is our table jiske pass ek method objects hai jo ki saare objects ko represent kr rha hai but usme se hume ek object chahie to get( lagakar)use qno ko fetch karlo
@@ -80,19 +80,19 @@ def editSaveQuestion(request):
     question.optiond=request.POST['optiond']
     question.answer=request.POST['answer']
     question.save()
-    return HttpResponseRedirect('http://localhost:8000/OTS/view-questions/')
+    return HttpResponseRedirect('https://testpariksha.herokuapp.com/OTS/view-questions/')
 
 def deleteQuestion(request):
     q=request.GET['qno']
     question=Question.objects.filter(qno=int(q))
     question.delete()
-    return HttpResponseRedirect('http://localhost:8000/OTS/view-questions/')
+    return HttpResponseRedirect('https://testpariksha.herokuapp.com/OTS/view-questions/')
 
 def deleteUser(request):
     u=request.GET['username']
     user=User.objects.filter(username=u)
     user.delete()
-    return HttpResponseRedirect('http://localhost:8000/OTS/view-users/')
+    return HttpResponseRedirect('https://testpariksha.herokuapp.com/OTS/view-users/')
 
 
 
@@ -114,10 +114,10 @@ def saveUser(request):
         user.password=request.POST['password']
         user.realname=request.POST['realname']
         user.save()
-        url="http://localhost:8000/OTS/login" #agar new user hai to go to login page
+        url="https://testpariksha.herokuapp.com/OTS/login" #agar new user hai to go to login page
 
     else:
-        url="http://localhost:8000/OTS/signup/?error=1" #nhi to use signup page pr hi roko
+        url="https://testpariksha.herokuapp.com/OTS/signup/?error=1" #nhi to use signup page pr hi roko
 
     return HttpResponseRedirect(url)
 
@@ -142,32 +142,32 @@ def loginValidation(request):
         user.username    #ye exception raise karega agar username nhi hua to
         request.session['username']=user.username
         request.session['realname']=user.realname#session variables
-        url="http://localhost:8000/OTS/home/"#exception na hone par hum home par jaenge
+        url="https://testpariksha.herokuapp.com/OTS/home/"#exception na hone par hum home par jaenge
     except:
-        url="http://localhost:8000/OTS/login/"#hone par usi form mai reh jaenge
+        url="https://testpariksha.herokuapp.com/OTS/login/"#hone par usi form mai reh jaenge
 
     return HttpResponseRedirect(url)#ye page pr redirect krne k lie
 def logout(request):
     request.session.clear()#destroy the session variable
-    url="http://localhost:8000/OTS/login/"
+    url="https://testpariksha.herokuapp.com/OTS/login/"
     return HttpResponseRedirect(url)
 
 def home(request):
     try:
         realname=request.session['realname']#agar bina login kie hi home par jaane ki kosis krega to session variable bna hi nhi hoga to keyerror aajaegi
     except KeyError:
-        return HttpResponseRedirect("http://localhost:8000/OTS/login/")
+        return HttpResponseRedirect("https://testpariksha.herokuapp.com/OTS/login/")
 
     res=render(request,'OTS/home.html')
     return res
 def startTest(request):
      try:
         if request.session['username'] == 'admin':
-            return HttpResponseRedirect("http://localhost:8000/OTS/home/")
+            return HttpResponseRedirect("https://testpariksha.herokuapp.com/OTS/home/")
         else:
             pass
      except:
-         return HttpResponseRedirect("http://localhost:8000/OTS/login/")
+         return HttpResponseRedirect("https://testpariksha.herokuapp.com/OTS/login/")
      no_of_questions=5
      question_pool=list(Question.objects.all())#Question.objects.all se saare question aajenge jise hum list mai convert renge
      random.shuffle(question_pool) #us list ko har baar shuufle krenge(shuffling of question)
@@ -177,11 +177,11 @@ def startTest(request):
 def testResult(request):
       try:
         if request.session['username'] == 'admin':
-            return HttpResponseRedirect("http://localhost:8000/OTS/home/")
+            return HttpResponseRedirect("https://testpariksha.herokuapp.com/OTS/home/")
         else:
             pass
       except:
-         return HttpResponseRedirect("http://localhost:8000/OTS/login/")
+         return HttpResponseRedirect("https://testpariksha.herokuapp.com/OTS/login/")
     #start_test.html se qno hidden form mai aur correct option aarha hai
       total_attempt=0
       total_right=0

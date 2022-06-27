@@ -14,15 +14,15 @@
         {% if request.session.username == 'admin' %}<!--session variable mai agar admin hai to to use dusra menu dikhana hai aur normal student ko dusra-->
         <!--Menu for admin-->
         <ul class="navbar-admin">
-            <li> <a href="http://localhost:8000/OTS/new-question/">New</a></li>
-            <li><a href="http://localhost:8000/OTS/view-questions/">View All</a></li>
-             <li><a href="http://localhost:8000/OTS/logout/">Logout</a></li>
+            <li> <a href="https://testpariksha.herokuapp.com/OTS/new-question/">New</a></li>
+            <li><a href="https://testpariksha.herokuapp.com/OTS/view-questions/">View All</a></li>
+             <li><a href="https://testpariksha.herokuapp.com/OTS/logout/">Logout</a></li>
          </ul>
         {% else %}
       <!----  -menu for learner-->
         <ul class="navbar-user">
-            <li><a href="http://localhost:8000/OTS/start-test/">Re-attempt Test</a></li>
-            <li><a href="http://localhost:8000/OTS/logout/">Logout</a></li>
+            <li><a href="https://testpariksha.herokuapp.com/OTS/start-test/">Re-attempt Test</a></li>
+            <li><a href="https://testpariksha.herokuapp.com/OTS/logout/">Logout</a></li>
         </ul>
         {% endif %}
     </div>

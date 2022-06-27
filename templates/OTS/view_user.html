@@ -14,10 +14,10 @@
        <!---- {% if request.session.username == 'admin' %}session variable mai agar admin hai to to use dusra menu dikhana hai aur normal student ko dusra-->
         <!--Menu for admin-->
         <ul class="navbar-admin">
-            <li> <a href="http://localhost:8000/OTS/home/">Home</a></li>
-            <li> <a href="http://localhost:8000/OTS/new-question/">New Question</a></li>
-            <li><a href="http://localhost:8000/OTS/view-questions/">View All</a></li>
-             <li><a href="http://localhost:8000/OTS/logout/">Logout</a></li>
+            <li> <a href="https://testpariksha.herokuapp.com/OTS/home/">Home</a></li>
+            <li> <a href="https://testpariksha.herokuapp.com/OTS/new-question/">New Question</a></li>
+            <li><a href="https://testpariksha.herokuapp.com/OTS/view-questions/">View All</a></li>
+             <li><a href="https://testpariksha.herokuapp.com/OTS/logout/">Logout</a></li>
          </ul>
      <!----   {% else %}
         menu for learner-->
@@ -37,7 +37,7 @@
              <td class="links">{{user.username}}</td><!--question represents one-one item in questions(key) -->
              <td class="links">{{user.realname}}</td>
              <td class="links">{{user.password}}</td>
-             <td class="links"><a href="http://localhost:8000/OTS/delete-user?username={{user.username}}">Delete</a></td>
+             <td class="links"><a href="https://testpariksha.herokuapp.com/OTS/delete-user?username={{user.username}}">Delete</a></td>
          </tr>
          {% endfor %}
      </table>
