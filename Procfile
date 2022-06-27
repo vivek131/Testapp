@@ -1,1 +1,1 @@
-web: gunicorn OnlineExam.wsgi --log-file -
+web: gunicorn OnlineExam.wsgi

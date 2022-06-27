@@ -1,0 +1,52 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    background-color: black;
+}
+.menu{
+    margin-top: 10px;
+    margin-top: 21px;
+    font-size: 1.6rem;
+}
+#header{
+    margin-top: 86px;
+    color: white;
+    font-size: 3.2rem;
+}
+
+.navbar-user{
+   display:flex;
+   background-color: white;
+   
+}
+
+.navbar-user li{
+    list-style: none;
+    margin: auto 29px;
+ }
+.navbar-user a{
+    
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar-admin{
+    display:flex;
+    background-color: white;
+    
+ }
+ 
+ .navbar-admin li{
+     list-style: none;
+     margin: auto 29px;
+  }
+ .navbar-admin a{
+     
+     color: black;
+     text-decoration: none;
+     font-weight: bold;
+ }
+

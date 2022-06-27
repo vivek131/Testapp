@@ -1,0 +1,58 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    background-color: black;
+}
+.menu{
+    margin-top: 10px;
+    margin-top: 21px;
+    font-size: 1.6rem;
+}
+
+.navbar-admin{
+    display:flex;
+    background-color: white;
+    
+ }
+ 
+ .navbar-admin li{
+     list-style: none;
+     margin: auto 29px;
+  }
+ .navbar-admin a{
+     
+     color: black;
+     text-decoration: none;
+     font-weight: bold;
+ }
+ .container{
+    color: white;
+    text-align: center;
+    border: 2px solid white;
+    width: 51%;
+    margin: 46px auto;
+    border-radius: 26px;
+    font-size: 1.5rem;
+ }
+ 
+ .formcss{
+     margin-top:30px;
+ }
+ .title{
+     font-size:1.2rem;
+     
+ }
+ .data input{
+     font-size: 2rem;
+ }
+ .data textarea{
+    font-size: 3rem;
+ }
+ #btn input{
+    padding: 4px;
+    margin: 16px;
+    font-size: 1.2rem;
+    border-radius: 10px;;
+ }

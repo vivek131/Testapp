@@ -1,0 +1,29 @@
+*{
+    padding:0;
+    margin:0;
+}
+#header{
+    color:white;
+    background-color: black;
+    font-size: 3.2rem;
+    margin-top: 10px;
+}
+
+.formcss{
+    margin-top: 20px;
+    border: 2px solid black;
+    color: white;
+    background-color: black;
+}
+
+.que{
+    margin-top: 13px;
+    font-size: 1.2rem;
+}
+#btn input{
+    margin-top: 8px;
+    font-size: 1.1rem;
+    background-color: lawngreen;
+    padding: 3px;
+    border-radius: 19px;
+}
