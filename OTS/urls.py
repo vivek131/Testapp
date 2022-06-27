@@ -3,7 +3,7 @@ from .views import *
 #saare views import krlo
 
 urlpatterns=[
-    #path('login/',login),
+    path('login/',login),
     path('new-question/',newQuestion),
     path('save-question/',saveQuestion),
     path('view-questions/',viewQuestions),

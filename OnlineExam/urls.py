@@ -18,8 +18,6 @@ from django.urls import path
 from django.conf.urls import include
 
 urlpatterns = [
-   # path('OTS/',include('OTS.urls')),
-   path('OTS/login/',include('OTS.urls')),
-   path('OTS/signup/',include('OTS.urls')),
+   path('OTS/',include('OTS.urls')),
     path('admin/', admin.site.urls),
 ]
